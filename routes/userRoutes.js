@@ -1,4 +1,5 @@
 const express = require('express')
+const { getStudentData } = require('../controller/userController')
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -14,5 +15,7 @@ router.get('/live', (req, res) => {
     message: "We Are Live..."
   })
 })
+
+router.get('/getData', getStudentData)
 
 module.exports = router
