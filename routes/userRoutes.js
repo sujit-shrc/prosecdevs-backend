@@ -1,5 +1,5 @@
 const express = require('express')
-const { getStudentData } = require('../controller/userController')
+const { getStudents, getCourses, addStudents, deleteStudent }  = require('../controller/userController')
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -16,6 +16,9 @@ router.get('/live', (req, res) => {
   })
 })
 
-router.get('/getData', getStudentData)
+router.get('/students', getStudents)
+router.get('/courses', getCourses)
+router.post('/addStudents', addStudents)
+router.delete('/student/:id', deleteStudent)
 
 module.exports = router
